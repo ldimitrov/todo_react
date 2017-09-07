@@ -1,10 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const TodoForm = (properties) =>
-    (
-        <form>
-            <input type="text" 
-            onChange={properties.handleInputChange} 
+export const TodoForm = (properties) => (
+    <form>
+        <input type="text"
+            onChange={properties.handleInputChange}
             value={properties.currentTodo} />
-        </form>
-    )
+    </form>
+)
+
+TodoForm.propTypes = {
+    currentTodo: PropTypes.string.isRequired,
+    handleInputChange: PropTypes.func.isRequired
+}
